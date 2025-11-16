@@ -1,0 +1,11 @@
+Complete following objective
+
+1. Allocate random block sizes (1 – 256 bytes) until arena is full.
+2. Fill each allocation with a known pattern (e.g. block index).
+3. Print addresses and sizes.
+4. Call arena_reset, reallocate same pattern, confirm addresses restart from base.
+5.  Run under Valgrind — must be zero leaks, zero invalid writes.
+
+Use command to test heap overflow/seg fault/memory leak status
+
+gcc -g -O0 -fsanitize=address,undefined -fno-omit-frame-pointer -fno-inline -Wall -Wextra -Werror heapStressTest.c -o progName
